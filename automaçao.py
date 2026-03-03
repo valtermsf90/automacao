@@ -26,3 +26,49 @@ time.sleep(3)                    # Aguarda 3 segundos para o login processar
 
 tabela = pandas.read_csv("produtos.csv")  # Lê o arquivo produtos.csv como tabela
 print(tabela)                             # Exibe a tabela lida
+
+# Passo 4: Cadastrar um produto
+for linha in tabela.index:                # Para cada linha da tabela de produtos
+    # clicar no campo de código
+    pyautogui.click(x=653, y=294)         # Clica na posição do campo "código" do formulário
+
+    # pegar da tabela o valor do campo que a gente quer preencher
+    codigo = tabela.loc[linha, "codigo"]  # Obtém o valor do campo "codigo" da linha atual
+
+    # preencher o campo
+    pyautogui.write(str(codigo))          # Digita o código no campo
+
+    # passar para o proximo campo
+    pyautogui.press("tab")                # Pressiona Tab para ir para o próximo campo
+
+    # preencher o campo marca
+    pyautogui.write(str(tabela.loc[linha, "marca"]))  # Digita a marca
+    pyautogui.press("tab")                            # Vai para o próximo campo
+
+    # preencher o campo tipo
+    pyautogui.write(str(tabela.loc[linha, "tipo"]))   # Digita o tipo
+    pyautogui.press("tab")                            # Vai para o próximo campo
+
+    # preencher o campo categoria
+    pyautogui.write(str(tabela.loc[linha, "categoria"]))  # Digita a categoria
+    pyautogui.press("tab")                                # Vai para o próximo campo
+
+    # preencher o campo preço unitário
+    pyautogui.write(str(tabela.loc[linha, "preco_unitario"]))  # Digita o preço unitário
+    pyautogui.press("tab")                                     # Vai para o próximo campo
+
+    # preencher o campo custo
+    pyautogui.write(str(tabela.loc[linha, "custo"]))           # Digita o custo
+    pyautogui.press("tab")                                     # Vai para o próximo campo
+
+    obs = tabela.loc[linha, "obs"]         # Obtém o valor do campo "obs" (observação)
+    if not pd.isna(obs):                   # Se o campo não estiver vazio
+        pyautogui.write(str(tabela.loc[linha, "obs"]))  # Digita a observação
+
+    pyautogui.press("tab")                 # Vai para o botão de enviar/cadastrar
+    pyautogui.press("enter")               # Pressiona Enter para cadastrar o produto
+
+    # dar scroll de tudo pra cima
+    pyautogui.scroll(5000)                 # Faz scroll para cima na página
+
+    # Passo 5: Repetir o processo de cadastro até o fim
