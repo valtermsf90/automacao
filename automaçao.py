@@ -5,7 +5,7 @@ import pandas         # Biblioteca para manipulação de dados/tabulação
 link = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"  # URL de login
 
 pyautogui.press('win')           # Pressiona a tecla Windows para abrir o menu iniciar
-pyautogui.write('chrome')        # Digita 'chrome' para buscar o navegador
+pyautogui.write('edge')        # Digita 'chrome' para buscar o navegador
 pyautogui.press('enter')         # Pressiona Enter para abrir o Chrome
 time.sleep(5)                    # Aguarda 5 segundos para o Chrome abrir
 
