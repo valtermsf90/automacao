@@ -1,14 +1,28 @@
 import pyautogui
-import os
+import time
 
-# Open Notepad
+
+link = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"
+
 pyautogui.press('win')
-pyautogui.write('notepad')
+pyautogui.write('chrome')
 pyautogui.press('enter')
+time.sleep(3)  # Aguarda o Chrome abrir
 
-# Write 'Ola mundo' and press enter
-pyautogui.write('Ola mundo')
+pyautogui.hotkey('win', 'up')    # Maximiza janela
+
+pyautogui.write(link)
 pyautogui.press('enter')
+time.sleep(5)  # Aguarda a página carregar
 
-# Execute the Python script
-os.system(r'python "c:\Users\valte\Meu Drive (machadofilho.ti@gmail.com)\material de aula\HASHTAG\automacao\automaçao.py"')
+pyautogui.click(x=730, y=374)  # Cuidado: coordenada fixa
+pyautogui.write("pythonimpressionador@gmail.com")
+pyautogui.press('tab')
+pyautogui.write("sua senha")  # Troque por uma variável segura
+pyautogui.press('enter')
+time.sleep(3)
+
+import pandas
+
+tabela = pandas.read_csv("produtos.csv")
+print(tabela)
