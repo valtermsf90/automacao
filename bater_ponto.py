@@ -34,19 +34,19 @@ time.sleep(1)  # Aguarda 5 segundos para a página carregar
 pyautogui.moveTo(x=44, y=522)
 time.sleep(1)  # Aguarda meio segundo
 pyautogui.click(x=44, y=522)  # Clica em uma posição fixa (campo de e-mail)
-time.sleep(3)  # Aguarda meio segundo
+time.sleep(10)  # Aguarda meio segundo
 pyautogui.click(x=1331, y=264) # Clica em uma posição fixa (campo de e-mail)
-time.sleep(3)  # Aguarda meio segundo
+time.sleep(10)  # Aguarda meio segundo
 pyautogui.click(x=804, y=559) # Clica em uma posi
 pyautogui.write("04364100528")  # Digita o e-mail
 pyautogui.press('tab')  
 pyautogui.write("081152")  # Digita a senha
 pyautogui.press('enter')  # Pressiona Enter para fazer login
-time.sleep(5)  # Aguarda 3 segundos para o login processar
+time.sleep(10)  # Aguarda 3 segundos para o login processar
 
 #---------bater ponto----------------
 pyautogui.moveTo(x=89, y=388)
-time.sleep(1)  # Aguarda meio segundo
+time.sleep(1)  # Aguarda meio segundo 
 pyautogui.click(x=89, y=388)  # Clica em uma
 pyautogui.moveTo(x=1850, y=755)
 time.sleep(4)  # Aguarda meio segundo
@@ -78,5 +78,5 @@ pyautogui.press('tab')  # Vai para o botão de enviar/cadastrar
 pyautogui.press('tab')  # Vai para o botão de enviar/cadastrar
 pyautogui.write("Aparelho mal funcionamento. ")  # Digita a descrição do problema
 time.sleep(1)  # Aguarda meio segundo
-pyautogui.moveTo(x=453, y=932)
+pyautogui.press('tab')  # Vai para o botão de enviar/cadastrar
 time.sleep(1)  # Aguarda meio segundo
